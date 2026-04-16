@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BerryBot - Dashboard</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="bg-gray-50 dark:bg-[#1f1315] min-h-screen font-sans">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <div class="w-64 bg-white dark:bg-[#2d1a1e] border-r border-slate-200 dark:border-white/10 flex flex-col">
+            <div class="p-6 border-b border-slate-200 dark:border-white/10">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-[#8d2036] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
+                        B
+                    </div>
+                    <div class="font-semibold text-xl text-[#8d2036] dark:text-white">BerryBot</div>
+                </div>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-[#8d2036] bg-[#8d2036]/10 font-medium">
+                    <span class="material-symbols-outlined">home</span>
+                    <span>Inicio</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">chat_bubble</span>
+                    <span>BerryBot Chat</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">person_search</span>
+                    <span>Buscar Maestro</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">book</span>
+                    <span>Buscar Materia</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">school</span>
+                    <span>Mi Tutor</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">assignment_turned_in</span>
+                    <span>Asesorías PASA</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <span>Calendario</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">event</span>
+                    <span>Eventos</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+                    <span class="material-symbols-outlined">rate_review</span>
+                    <span>Publicar Reseña</span>
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-slate-200 dark:border-white/10">
+                <button onclick="logoutDirect()"
+                    class="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-2xl transition-colors">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Cerrar sesión</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 overflow-auto">
+
+            <!-- Header superior -->
+            <header
+                class="bg-white dark:bg-[#2d1a1e] border-b border-slate-200 dark:border-white/10 px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-3xl text-slate-400">search</span>
+                    <input type="text" placeholder="Buscar maestros, materias o trámites..."
+                        class="input-custom w-96 bg-transparent border-0 focus:ring-0">
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <button onclick="toggleDark()" class="text-2xl">
+                        <span id="dark-icon" class="material-symbols-outlined">dark_mode</span>
+                    </button>
+
+                    <div class="flex items-center gap-3">
+                        <div id="hd-avatar"
+                            class="w-9 h-9 bg-[#8d2036] text-white rounded-2xl flex items-center justify-center font-bold text-sm">
+                        </div>
+                        <div>
+                            <div id="hd-name" class="font-semibold text-sm"></div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Estudiante</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido del Dashboard -->
+            <main class="p-8">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-[#8d2036] dark:text-white">
+                        Bienvenido de nuevo, <span id="welcome-name" class="text-[#8d2036]"></span>
+                    </h1>
+                    <p class="text-slate-600 dark:text-slate-400 mt-1">
+                        Resumen de tu actividad académica para hoy.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                    <!-- Próximos eventos -->
+                    <div class="md:col-span-5 bg-white dark:bg-[#2d1a1e] rounded-3xl p-6 card">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-semibold text-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined">campaign</span>
+                                Próximos eventos
+                            </h3>
+                            <a href="#" class="text-sm text-[#8d2036] hover:underline">Ver todo</a>
+                        </div>
+                        <div id="eventos-grid" class="grid grid-cols-1 gap-4">
+                            <!-- Se llena con JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Chat rápido -->
+                    <div class="md:col-span-7 bg-white dark:bg-[#2d1a1e] rounded-3xl p-6 card flex flex-col">
+                        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">chat_bubble</span>
+                            ¿Tienes dudas académicas?
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">
+                            Pregunta sobre trámites, materias, horarios o maestros. BerryBot está disponible 24/7.
+                        </p>
+                        <button onclick="alert('Chat con BerryBot en desarrollo')"
+                            class="mt-auto btn btn-primary flex items-center justify-center gap-2 py-4">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                            Iniciar Chat con BerryBot
+                        </button>
+                    </div>
+
+                    <!-- Últimas reseñas -->
+                    <div class="md:col-span-12 bg-white dark:bg-[#2d1a1e] rounded-3xl p-6 card">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-semibold text-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined">forum</span>
+                                Últimas reseñas
+                            </h3>
+                            <a href="#" class="text-sm text-[#8d2036] hover:underline flex items-center gap-1">
+                                <span class="material-symbols-outlined text-base">add</span>
+                                Agregar reseña
+                            </a>
+                        </div>
+                        <div id="resenas-lista" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Se llena con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+    <script>
+        async function logoutDirect() {
+            const btn = event?.target?.closest('button');
+            const originalContent = btn?.innerHTML;
+
+            // Feedback visual inmediato
+            if (btn) {
+                btn.innerHTML = `
+                <div class="flex items-center justify-center gap-2 w-full">
+                    <div class="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+                    <span>Cerrando sesión...</span>
+                </div>
+            `;
+                btn.disabled = true;
+                btn.style.opacity = '0.8';
+            }
+
+            try {
+                const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+
+                const supabase = createClient(
+                    'https://otibvoqmgsybpfaqiyun.supabase.co',
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90aWJ2b3FtZ3N5YnBmYXFpeXVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMzI4NDcsImV4cCI6MjA5MTcwODg0N30.KQpiRCulIi6c5p021OqqOPS8oyr_-mSfhM70qAwcz9I'
+                );
+
+                await supabase.auth.signOut();
+
+                // Limpieza
+                localStorage.removeItem('supabase.auth.token');
+                sessionStorage.clear();
+
+                // Redirigir (replace es más limpio que href)
+                window.location.replace('login.html');
+
+            } catch (error) {
+                console.error('Logout error:', error);
+                // Si hay error, igual redirigimos
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

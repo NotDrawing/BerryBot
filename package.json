@@ -1,0 +1,27 @@
+{
+  "name": "berrybot",
+  "version": "1.0.0",
+  "description": "Proyecto de diseño web sistema Universitario con Chatbot",
+  "main": "auth.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/dist/output.css",
+    "dev": "tailwindcss -i ./src/input.css -o ./public/dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotDrawing/BerryBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NotDrawing/BerryBot/issues"
+  },
+  "homepage": "https://github.com/NotDrawing/BerryBot#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.19"
+  }
+}
