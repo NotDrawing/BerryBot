@@ -146,8 +146,8 @@ npm run build
   - Habilitar Google OAuth con Client ID y Client Secret
 
 4. Configurar URLs de redirección:
-  - https://notdrawing.github.io/BerryBot/** (direccion de host de github pages)
-  - http://127.0.0.1:5500/** (Tu localhost)
+  - https://notdrawing.github.io/BerryBot/**
+  - http://127.0.0.1:5500/**
 
 ### 5. Configurar variables de entorno
 
