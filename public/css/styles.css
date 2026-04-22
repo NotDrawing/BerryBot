@@ -518,16 +518,3 @@ a.text-\[\#8d2036\]:hover {
     color: #8d2036;
 }
 
-.material-symbols-outlined {}
-
-.profile-btn {
-    background-color: #8d2036;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    font-family: 'Lexend', sans-serif;
-}

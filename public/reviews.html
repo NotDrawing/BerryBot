@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
     <meta charset="UTF-8">
@@ -12,64 +12,61 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<!-- ── TOP NAVBAR ── -->
-<header
-    class="border-b border-[#e4d2d6] dark:border-white/10 bg-white dark:bg-[#2d1a1e] px-6 md:px-20 py-4 flex items-center justify-between sticky top-0 z-50">
-
-    <!-- Nav -->
-    <div>
-        <a href="/public/dashboard.html" class="text-2xl font-bold text-[#8d2036]">Berry Bot</a>
+<body class="bg-[#f8f6f6] dark:bg-[#1f1315] min-h-screen font-sans">
+ 
+<header class="border-b border-[#e4d2d6] dark:border-white/10 bg-white dark:bg-[#2d1a1e] px-6 md:px-20 py-4 flex items-center justify-between top-0 z-50">
+ 
+    <!-- IZQUIERDA: Logo -->
+    <a href="/public/dashboard.html" class="text-2xl font-bold text-[#8d2036]">Berry Bot</a>
+ 
+    <!-- DERECHA: Links + Botones -->
+    <div class="flex items-center gap-6">
         <a class="nav-link" href="#">Explorar</a>
         <a class="nav-link" href="#">Profesores</a>
         <a class="nav-link" href="#">Mis Reseñas</a>
-        <div>
-            <button onclick="toggleDark()" class="text-slate-400 hover:text-[#8d2036] transition-colors"
-                aria-label="Cambiar tema">
-                <span id="dark-icon" class="material-symbols-outlined" style="font-size:22px">dark_mode</span>
-            </button>
-
-            <button id="profile-btn"
-                class="ml-4 bg-[#8d2036] text-white px-3 py-1 rounded hover:bg-[#7a1a2b] transition-colors">
-                Perfil
-            </button>
-
-            </nav>
-        </div>
+        <button onclick="toggleDark()" class="text-slate-400 hover:text-[#8d2036] transition-colors" aria-label="Cambiar tema">
+            <span id="dark-icon" class="material-symbols-outlined" style="font-size:22px">dark_mode</span>
+        </button>
+        <button id="profile-btn" class="bg-[#8d2036] text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-[#7a1a2b] transition-colors">
+            Perfil
+        </button>
+    </div>
+ 
 </header>
-
+ 
 <!-- Main -->
 <main class="max-w-[800px] mx-auto px-4 py-10">
-    <!-- Titulo de la pagina -->
     <div class="mb-8">
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight"> Nueva Reseña </h2>
-        <p class="text-[#8f5662] dark:text-slate-400 mt-2">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight dark:text-white" > Nueva Reseña </h2>
+        <p class="text-[#8f5662] dark:text-slate-400 mt-2 dark:text-white" >
             Comparte tu experiencia academica de forma constructiva y ayuda a otros estudiantes a tomar decisiones
             informadas.
         </p>
     </div>
-
+ 
     <!-- Form Card -->
     <div class="bg-white dark:bg-[#2d1a1e] rounded-xl shadow-sm border border-[#e4d2d6] dark:border-white/10 p-6">
         <div class="space-y-8">
-
+ 
             <!-- Profesores -->
             <section>
-                <label class="block text-lg font-bold mb-3">
+               <label class="block text-lg font-bold mb-3 dark:text-white">
                     A que profesor quieres calificar?
                 </label>
-
-                <div class="relative">
-                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#8f5662]"
-                        style="font-size:20px">search</span>
+                <div style="position:relative;">
+                    <span class="material-symbols-outlined text-[#8f5662]"
+                        style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:20px; pointer-events:none;">search</span>
                     <input id="profesor-busqueda" type="text" placeholder="Busca por nombre del profesor o materia"
                         class="form-input" autocomplete="off" />
                 </div>
-                <p class="text-xs text-[#8f5662] mt-2 italic"> Ej: Juan Pérez o Calculo Integral </p>
+                <p class="text-xs text-[#8f5662] mt-2 italic dark:text-white "> Ej: Juan Pérez o Calculo Integral </p>
             </section>
-
+ 
             <!-- Calificacion -->
             <section>
-                <label class="block text-lg font-bold mb-3"> Calificacion General</label>
+                <label class="block text-lg font-bold mb-3 dark:text-white">
+                    Calificacion General
+                </label>
                 <div class="flex items-center gap-2">
                     <button class="star-btn filled" data-value="1" type="button" aria-label="1 estrella">
                         <span class="material-symbols-outlined">star</span>
@@ -89,12 +86,14 @@
                     <span id="rating-label" class="ml-4 text-xl font-bold text-[#8d2036]">4.0</span>
                 </div>
             </section>
-
+ 
             <!-- Etiquetas -->
             <section>
-                <label class="block text-lg font-bold mb-3"> Etiquetas </label>
+                <label class="block text-lg font-bold mb-3 dark:text-white">
+                    Etiquetas
+                </label>
                 <div class="flex flex-wrap gap-2">
-                    <button class="tag-btn active" type="button"> Explicaciones Claras</button>
+                    <button class="tag-btn" type="button"> Explicaciones Claras</button>
                     <button class="tag-btn" type="button"> Proyecto Final </button>
                     <button class="tag-btn" type="button"> Estricto </button>
                     <button class="tag-btn" type="button"> Examenes Dificiles </button>
@@ -105,26 +104,33 @@
                     <button class="tag-btn" type="button"> Accesible </button>
                 </div>
             </section>
-
+ 
             <!-- Comentarios -->
             <section>
-                <div class="flex justify-between items-end mb-3">
-                    <label class="block text-lg font-bold mb-3"> Comentarios Adicionales</label>
-                    <span id="char-counter" class="text-xs text-[#8f5662]"> Min. 50 caracteres</span>
+                <div class="flex justify-between items-end mb-3 ">
+                    <label class="block text-lg font-bold mb-3 dark:text-white">
+                        Comentarios Adicionales
+                    </label>
+                    <span id="char-counter" class="text-xs text-[#8f5662] dark:text-slate-500 dark:text-white ">
+                        Min. 50 caracteres
+                    </span>
                 </div>
                 <textarea id="review-text" class="form-textarea"
                     placeholder="Cuentanos mas sobre tu experiencia... Por ejemplo: Como son sus examenes? Como es su manera de enseñar?"
                     maxlength="1000"></textarea>
             </section>
-
+ 
             <!-- Anonimato -->
             <section class="flex items-center justify-between p-4 bg-[#f8f6f6]/50 dark:bg-white/5 rounded-lg">
                 <div class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-[#8d2036]">visibility_off</span>
                     <div>
-                        <p class="font-bold text-sm">Publicar de forma anonima</p>
-                        <p class="text-xs text-[#8f5662] dark:text-slate-500">Tu nombre no se mostrará al publicar esta
-                            reseña.</p>
+                        <p class="font-bold text-sm dark:text-white">
+                            Publicar de forma anonima
+                        </p>
+                        <p class="text-xs text-[#8f5662] dark:text-slate-500 dark:text-white">
+                            Tu nombre no se mostrará al publicar esta reseña.
+                        </p>
                     </div>
                 </div>
                 <div id="anon-toggle" class="toggle-track on" onclick="toggleAnon()" role="switch" aria-checked="true"
@@ -132,7 +138,7 @@
                     <div class="toggle-thumb"></div>
                 </div>
             </section>
-
+ 
             <!-- Footer acciones -->
             <div class="flex gap-3 w-full md:w-auto">
                 <button type="button" onclick="history.back()"
@@ -144,25 +150,25 @@
                     Enviar Reseña
                 </button>
             </div>
-
+ 
             <!-- Tips -->
             <div class="bg-[#f8f6f6]/50 dark:bg-white/10 p-4 rounded-lg mt-4">
-                <h4 class="text-sm font-bold"> Consejo de BerryBot</h4>
-                <p class="text-sm text-[#8f5662] dark:text-slate-500">
-                    <span class="font-bold"></span> Incluye detalles específicos sobre tu experiencia para
-                    ayudar a otros estudiantes.
+                <h4 class="text-sm font-bold dark:text-white"> Consejo de BerryBot</h4>
+                <p class="text-sm text-[#8f5662] dark:text-slate-500 mt-1 italic dark:text-white">
+                    Incluye detalles específicos sobre tu experiencia para ayudar a otros estudiantes.
                 </p>
             </div>
-
+ 
         </div>
     </div>
 </main>
-
+ 
 <footer class="py-12 text-center text-[#8f5662] dark:text-slate-400 text-sm">
     &copy; 2026 Berry Bot. Todos los derechos reservados.
 </footer>
-
-<body>
+ 
+<script src="./js/script.js"></script>
+ 
 </body>
-
 </html>
+ 
