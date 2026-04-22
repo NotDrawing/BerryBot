@@ -67,6 +67,7 @@ BerryBot/
 │ ├── login.html # Página de inicio de sesión
 │ ├── complete-profile.html # Completado de perfil universitario
 │ ├── dashboard.html # Panel principal del estudiante
+│ ├── reviews.html # Panel de reviews de maestros del estudiante
 │ ├── css/
 │ │ └── styles.css # Estilos personalizados (dark mode, tabs)
 │ ├── js/
