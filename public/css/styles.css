@@ -161,6 +161,16 @@ html.theme-transitioning * {
     transition: all 0.25s ease;
 }
 
+.btn-secondary {
+    background-color: #D4AF37;
+    color: #8d2036;
+    border: 2px solid #8d2036;
+    border-radius: 9999px;
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
 .btn-primary:hover {
     background-color: #7a1c2e;
     transform: translateY(-1px);
