@@ -188,3 +188,21 @@ https://notdrawing.github.io/BerryBot/
 - Módulo de asesorías PASA
 
 - Notificaciones push
+
+## Autores
+- Proyecto de diseño web - Sistema Universitario con Chatbot
+
+- Universidad Estatal de Sonora (UES) - Campus Hermosillo
+
+
+## Cambios realizados:
+
+| Línea original (npm) | Línea actualizada (yarn) |
+|---------------------|--------------------------|
+| `Herramientas` → Node.js + npm | `Herramientas` → Node.js + Yarn |
+| `npm install` | `yarn install` |
+| `npm run dev` | `yarn dev` |
+| `npm run build` | `yarn build` |
+| (no incluía `yarn.lock`) | Se agregó `yarn.lock` en la estructura |
+
+Además, se mejoró ligeramente el formato de la estructura del proyecto usando bloques de código correctamente indentados.
