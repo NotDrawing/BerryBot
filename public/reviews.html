@@ -4,179 +4,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berry Bot - Nueva Reseña </title>
+    <title>Berry Bot - Nueva Reseña</title>
+
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="./css/styles.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body class="bg-[#f8f6f6] dark:bg-[#1f1315] min-h-screen font-sans">
 
+    <!-- HEADER -->
     <header
         class="border-b border-[#e4d2d6] dark:border-white/10 bg-white dark:bg-[#2d1a1e] px-6 md:px-20 py-4 flex items-center justify-between top-0 z-50">
 
-        <!-- IZQUIERDA: Logo -->
-        <a href="./dashboard.html" class="flex items-center gap-3">
-            <div
-                class="w-10 h-10 bg-[#8d2036] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
-                B</div>
-            <div class="font-semibold text-xl text-[#8d2036] dark:text-white">BerryBot</div>
+        <a href="/public/dashboard.html" class="text-2xl font-bold text-[#8d2036]">
+            Berry Bot
         </a>
 
-        <!-- DERECHA: Links + Botones -->
         <div class="flex items-center gap-6">
+
             <a class="nav-link" href="#">Explorar</a>
             <a class="nav-link" href="#">Profesores</a>
             <a class="nav-link" href="#">Mis Reseñas</a>
+
             <button onclick="toggleDark()" class="text-slate-400 hover:text-[#8d2036] transition-colors"
                 aria-label="Cambiar tema">
-                <span id="dark-icon" class="material-symbols-outlined" style="font-size:22px">dark_mode</span>
+
+                <span id="dark-icon" class="material-symbols-outlined" style="font-size:22px">
+                    dark_mode
+                </span>
+
             </button>
+
             <button id="profile-btn"
                 class="bg-[#8d2036] text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-[#7a1a2b] transition-colors">
+
                 Perfil
+
             </button>
+
         </div>
 
     </header>
 
-    <!-- Main -->
+    <!-- MAIN -->
     <main class="max-w-[800px] mx-auto px-4 py-10">
+
         <div class="mb-8">
-            <h2 class="text-3xl md:text-4xl font-black tracking-tight dark:text-white"> Nueva Reseña </h2>
+
+            <h2 class="text-3xl md:text-4xl font-black tracking-tight dark:text-white">
+                Nueva Reseña
+            </h2>
+
             <p class="text-[#8f5662] mt-2 dark:text-white">
+
                 Comparte tu experiencia academica de forma constructiva y ayuda a otros estudiantes a tomar decisiones
                 informadas.
+
             </p>
+
         </div>
 
-        <!-- Form Card -->
+        <!-- FORM CARD -->
         <div class="bg-white dark:bg-[#2d1a1e] rounded-xl shadow-sm border border-[#e4d2d6] dark:border-white/10 p-6">
+
             <div class="space-y-8">
 
-                <!-- Profesores -->
+                <!-- PROFESOR -->
                 <section>
+
                     <label class="block text-lg font-bold mb-3 dark:text-white">
                         A que profesor quieres calificar?
                     </label>
+
                     <div style="position:relative;">
+
                         <span class="material-symbols-outlined text-[#8f5662]"
-                            style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:20px; pointer-events:none;">search</span>
-                        <input id="profesor-busqueda" type="text" placeholder="Busca por nombre del profesor o materia"
-                            class="form-input" autocomplete="off" />
+                            style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:20px; pointer-events:none;">
+
+                            search
+
+                        </span>
+
+                        <input id="profesor-busqueda" type="text" placeholder="Busca por nombre del profesor "
+                            class="form-input transition-all duration-200" autocomplete="off" />
+
                     </div>
-                    <p class="text-xs text-[#8f5662] mt-2 italic dark:text-white "> Ej: Juan Pérez o Calculo Integral
+
+                    <!-- ERROR -->
+                    <p id="profesor-error" class="hidden text-red-600 text-sm mt-2 font-semibold">
+
+                        Por favor ingresa el nombre del profesor.
+
+                    </p>
+
+                    <p class="text-xs text-[#8f5662] mt-2 italic dark:text-white">
+
+                        Ej: Juan Pérez
+
+                    </p>
+
+                </section>
+                <section>
+
+                    <label class="block text-lg font-bold mb-3 dark:text-white">
+                        Que materia te impartio?
+                    </label>
+
+                    <div style="position:relative;">
+
+                        <span class="material-symbols-outlined text-[#8f5662]"
+                            style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:20px; pointer-events:none;">
+
+                            search
+
+                        </span>
+
+                        <input id="materia-busqueda" type="text" placeholder="Busca el nombre de la materia "
+                            class="form-input transition-all duration-200" autocomplete="off" />
+
+                    </div>
+
+                    <!-- ERROR -->
+                    <p id="materia-error" class="hidden text-red-600 text-sm mt-2 font-semibold">
+
+                        Por favor ingresa el nombre de la materia.
+
+                    </p>
+
+                    <p class="text-xs text-[#8f5662] mt-2 italic dark:text-white">
+
+                        Ej: Calculo Diferencial
+
                     </p>
                 </section>
-
-                <!-- Calificacion -->
+                <!-- CALIFICACION -->
                 <section>
+
                     <label class="block text-lg font-bold mb-3 dark:text-white">
                         Calificacion General
                     </label>
+
                     <div class="flex items-center gap-2">
-                        <button class="star-btn filled" data-value="1" type="button" aria-label="1 estrella">
+
+                        <button class="star-btn filled" data-value="1" type="button">
                             <span class="material-symbols-outlined">star</span>
                         </button>
-                        <button class="star-btn filled" data-value="2" type="button" aria-label="2 estrellas">
+
+                        <button class="star-btn filled" data-value="2" type="button">
                             <span class="material-symbols-outlined">star</span>
                         </button>
-                        <button class="star-btn filled" data-value="3" type="button" aria-label="3 estrellas">
+
+                        <button class="star-btn filled" data-value="3" type="button">
                             <span class="material-symbols-outlined">star</span>
                         </button>
-                        <button class="star-btn filled" data-value="4" type="button" aria-label="4 estrellas">
+
+                        <button class="star-btn filled" data-value="4" type="button">
                             <span class="material-symbols-outlined">star</span>
                         </button>
-                        <button class="star-btn empty" data-value="5" type="button" aria-label="5 estrellas">
+
+                        <button class="star-btn empty" data-value="5" type="button">
                             <span class="material-symbols-outlined">star</span>
                         </button>
-                        <span id="rating-label" class="ml-4 text-xl font-bold text-[#8d2036]">4.0</span>
+
+                        <span id="rating-label" class="ml-4 text-xl font-bold text-[#8d2036]">
+
+                            4.0
+
+                        </span>
+
                     </div>
+
                 </section>
 
-                <!-- Etiquetas -->
+                <!-- TAGS -->
                 <section>
+
                     <label class="block text-lg font-bold mb-3 dark:text-white">
                         Etiquetas
                     </label>
+
                     <div class="flex flex-wrap gap-2">
-                        <button class="tag-btn" type="button"> Explicaciones Claras</button>
-                        <button class="tag-btn" type="button"> Proyecto Final </button>
-                        <button class="tag-btn" type="button"> Estricto </button>
-                        <button class="tag-btn" type="button"> Examenes Dificiles </button>
-                        <button class="tag-btn" type="button"> Justo </button>
-                        <button class="tag-btn" type="button"> Muchas Tareas </button>
-                        <button class="tag-btn" type="button"> Barco </button>
-                        <button class="tag-btn" type="button"> Puntual </button>
-                        <button class="tag-btn" type="button"> Accesible </button>
+
+                        <button class="tag-btn" type="button">Explicaciones Claras</button>
+                        <button class="tag-btn" type="button">Proyecto Final</button>
+                        <button class="tag-btn" type="button">Estricto</button>
+                        <button class="tag-btn" type="button">Examenes Dificiles</button>
+                        <button class="tag-btn" type="button">Justo</button>
+                        <button class="tag-btn" type="button">Muchas Tareas</button>
+                        <button class="tag-btn" type="button">Barco</button>
+                        <button class="tag-btn" type="button">Puntual</button>
+                        <button class="tag-btn" type="button">Accesible</button>
+
                     </div>
+
                 </section>
 
-                <!-- Comentarios -->
+                <!-- COMENTARIOS -->
                 <section>
-                    <div class="flex justify-between items-end mb-3 ">
-                        <label class="block text-lg font-bold mb-3 dark:text-white">
+
+                    <div class="flex justify-between items-end mb-3">
+
+                        <label class="block text-lg font-bold dark:text-white">
                             Comentarios Adicionales
                         </label>
-                        <span id="char-counter" class="text-xs text-[#8f5662] dark:text-white ">
+
+                        <span id="char-counter" class="text-xs text-[#8f5662] dark:text-white">
+
                             Min. 50 caracteres
+
                         </span>
+
                     </div>
-                    <textarea id="review-text" class="form-textarea"
+
+                    <textarea id="review-text" class="form-textarea transition-all duration-200"
                         placeholder="Cuentanos mas sobre tu experiencia... Por ejemplo: Como son sus examenes? Como es su manera de enseñar?"
                         maxlength="1000"></textarea>
+
+                    <!-- ERROR -->
+                    <p id="comentario-error" class="hidden text-red-600 text-sm mt-2 font-semibold">
+
+                        El comentario debe tener al menos 50 caracteres.
+
+                    </p>
+
                 </section>
 
-                <!-- Anonimato -->
+                <!-- ANONIMO -->
                 <section class="flex items-center justify-between p-4 bg-[#f8f6f6]/50 dark:bg-white/5 rounded-lg">
+
                     <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-[#8d2036]">visibility_off</span>
+
+                        <span class="material-symbols-outlined text-[#8d2036]">
+                            visibility_off
+                        </span>
+
                         <div>
+
                             <p class="font-bold text-sm dark:text-white">
                                 Publicar de forma anonima
                             </p>
+
                             <p class="text-xs text-[#8f5662] dark:text-white">
                                 Tu nombre no se mostrará al publicar esta reseña.
                             </p>
+
                         </div>
+
                     </div>
+
                     <div id="anon-toggle" class="toggle-track on" onclick="toggleAnon()" role="switch"
                         aria-checked="true" tabindex="0">
+
                         <div class="toggle-thumb"></div>
+
                     </div>
+
                 </section>
 
-                <!-- Footer acciones -->
+                <!-- BOTONES -->
                 <div class="flex gap-3 w-full md:w-auto">
-                    <button type="button" onclick="history.back()"
+
+                    <button type="button" onclick="cancelarReview()"
                         class="btn btn-primary w-full py-4 text-base font-semibold border-[#8d2036] text-[#8d2036] hover:bg-[#8d2036]/10 transition-colors dark:border-white/20 dark:text-white dark:hover:bg-white/10">
+
                         Cancelar
+
                     </button>
+
                     <button type="button" id="sumbit-btn" onclick="sumbitReview()"
                         class="btn btn-primary w-full py-4 text-base font-semibold">
+
                         Enviar Reseña
+
                     </button>
+
                 </div>
 
-                <!-- Tips -->
+                <!-- CONSEJO -->
                 <div class="bg-[#f8f6f6]/50 dark:bg-white/10 p-4 rounded-lg mt-4">
-                    <h4 class="text-sm font-bold dark:text-white"> Consejo de BerryBot</h4>
+
+                    <h4 class="text-sm font-bold dark:text-white">
+                        Consejo de BerryBot
+                    </h4>
+
                     <p class="text-sm text-[#8f5662] mt-1 italic dark:text-white">
+
                         Incluye detalles específicos sobre tu experiencia para ayudar a otros estudiantes.
+
                     </p>
+
                 </div>
 
             </div>
+
         </div>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="py-12 text-center text-[#8f5662] dark:text-slate-400 text-sm">
+
         &copy; 2026 Berry Bot. Todos los derechos reservados.
+
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/controllers/reviewsController.js"></script>
 
 </body>
 
