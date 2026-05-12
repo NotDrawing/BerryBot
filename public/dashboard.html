@@ -34,11 +34,14 @@
                     <span class="material-symbols-outlined">home</span>
                     <span>Inicio</span>
                 </a>
-                <a href="#"
+
+                <!-- Enlaces al berry chat -->
+                <a href="chat.html"
                     class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
                     <span class="material-symbols-outlined">chat_bubble</span>
                     <span>BerryBot Chat</span>
                 </a>
+
                 <a href="#"
                     class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
                     <span class="material-symbols-outlined">person_search</span>
@@ -69,7 +72,7 @@
                     <span class="material-symbols-outlined">event</span>
                     <span>Eventos</span>
                 </a>
-                <a href="/public/reviews.html"
+                <a href="./reviews.html"
                     class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
                     <span class="material-symbols-outlined">rate_review</span>
                     <span>Publicar Reseña</span>
@@ -150,7 +153,7 @@
                         <p class="text-slate-600 dark:text-slate-400 mb-6">
                             Pregunta sobre trámites, materias, horarios o maestros. BerryBot está disponible 24/7.
                         </p>
-                        <button onclick="alert('Chat con BerryBot en desarrollo')"
+                        <button onclick="window.location.href='chat.html'"
                             class="mt-auto btn btn-primary flex items-center justify-center gap-2 py-4">
                             <span class="material-symbols-outlined">smart_toy</span>
                             Iniciar Chat con BerryBot
@@ -164,7 +167,8 @@
                                 <span class="material-symbols-outlined">forum</span>
                                 Últimas reseñas
                             </h3>
-                            <a href="/public/reviews.html" class="text-sm text-[#8d2036] hover:underline flex items-center gap-1">
+                            <a href="./reviews.html"
+                                class="text-sm text-[#8d2036] hover:underline flex items-center gap-1">
                                 <span class="material-symbols-outlined text-base">add</span>
                                 Agregar reseña
                             </a>
