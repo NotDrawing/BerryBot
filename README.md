@@ -56,7 +56,7 @@ El sistema permite a los estudiantes:
 | **Backend / DB** | Supabase (Autenticación + PostgreSQL) |
 | **Autenticación** | Email/Password, Google OAuth |
 | **Iconografía** | Material Symbols (Google Fonts) |
-| **Herramientas** | Node.js + npm, PostCSS, Tailwind CLI |
+| **Herramientas** | Node.js + Yarn, PostCSS, Tailwind CLI |
 
 ---
 
@@ -85,7 +85,9 @@ BerryBot/
 ├── index.html # Redirección a login
 ├── tailwind.config.js
 ├── postcss.config.js
-└── package.json
+├── package.json
+└── yarn.lock
+
 
 ---
 
@@ -124,54 +126,55 @@ cd BerryBot
 
 ### 2. Instalar dependencias
 ```bash
-npm install
+yarn install
 ```
 
 ### 3. Compilar TailwindCSS
-# Desarrollo (con watch)
+Desarrollo (con watch):
 ```bash
-npm run dev
+yarn dev
 ```
-# Produccion
+Producción:
 ```bash
-npm run build
+yarn build
 ```
 
 ### 4. Configurar Supabase
-1. Crear un proyecto en Supabase
+Crear un proyecto en Supabase
 
-2. Ejecutar el script SQL (incluido en el repositorio) para crear las tablas y políticas RLS
+Ejecutar el script SQL (incluido en el repositorio) para crear las tablas y políticas RLS
 
-3. Configurar autenticación:
-  - Habilitar Email/Password
-  - Habilitar Google OAuth con Client ID y Client Secret
+Configurar autenticación:
 
-4. Configurar URLs de redirección:
-  - https://notdrawing.github.io/BerryBot/**
-  - http://127.0.0.1:5500/**
+Habilitar Email/Password
+
+Habilitar Google OAuth con Client ID y Client Secret
+
+Configurar URLs de redirección:
+
+https://notdrawing.github.io/BerryBot/**
+
+http://127.0.0.1:5500/**
 
 ### 5. Configurar variables de entorno
-
 En public/js/models/supabaseClient.js:
-
 const SUPABASE_URL = 'tu-url-de-supabase'
 const SUPABASE_KEY = 'tu-clave-anonima-de-supabase'
 
 ## Despliegue
-
-**GitHub Pages**
+### GitHub Pages
 El proyecto está configurado para desplegarse automáticamente en:
 
 https://notdrawing.github.io/BerryBot/
 
-**Desarrollo local**
-```bash```
+### Desarrollo local
+
+```bash
 # Usar Live Server o cualquier servidor local
 # Ejemplo con VS Code Live Server:
 # Abrir con puerto 5500: http://127.0.0.1:5500/public/login.html
-
-### Próximas funcionalidades
-
+```
+## Próximas funcionalidades
 - Chatbot BerryBot con respuestas automáticas
 
 - Búsqueda avanzada de maestros y materias
@@ -185,10 +188,3 @@ https://notdrawing.github.io/BerryBot/
 - Módulo de asesorías PASA
 
 - Notificaciones push
-
-### Autores
-- Proyecto de diseño web - Sistema Universitario con Chatbot
-- Universidad Estatal de Sonora (UES) - Campus Hermosillo
-
-
-
