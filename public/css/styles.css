@@ -529,5 +529,110 @@ a.text-\[\#8d2036\]:hover {
 }
 
 .border-berrybot {
-  border-color: #7a1f2f; /* color burdeos*/
+    border-color: #7a1f2f;
+    /* color burdeos*/
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+/* NAV */
+
+.nav-link {
+    font-weight: 500;
+    color: #1f1315;
+    transition: .2s;
+}
+
+.dark .nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #8d2036;
+}
+
+.active-link {
+    color: #8d2036;
+    border-bottom: 2px solid #8d2036;
+    padding-bottom: 4px;
+}
+
+/* STATS */
+
+.stats-card {
+    background: white;
+    border: 1px solid #e4d2d6;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.dark .stats-card {
+    background: #2d1a1e;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #8d2036;
+}
+
+.stats-text {
+    color: #8f5662;
+    margin-top: 8px;
+}
+
+.dark .stats-text {
+    color: white;
+}
+
+/* BUTTONS */
+
+.semester-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #e4d2d6;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.semester-btn:hover,
+.semester-btn.active {
+    background: #8d2036;
+    color: white;
+}
+
+.dark .semester-btn {
+    border-color: rgba(255, 255, 255, .08);
+}
+
+/* CARD */
+
+.materia-card {
+    background: white;
+    border: 1px solid #e4d2d6;
+    border-radius: 24px;
+    padding: 28px;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.dark .materia-card {
+    background: #2d1a1e;
+    border-color: rgba(255, 255, 255, .08);
+}
+
+.materia-card:hover {
+    transform: translateY(-4px);
+}
+
+.semester-tag {
+    background: #f3ecee;
+    color: #8d2036;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 999px;
 }
