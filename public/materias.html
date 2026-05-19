@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BerryBot - Materias</title>
+
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="bg-[#f8f6f6] dark:bg-[#1f1315] min-h-screen font-sans">
+
+    <!-- HEADER -->
+    <header
+        class="sticky top-0 z-50 border-b border-[#e4d2d6] dark:border-white/10 bg-white/90 dark:bg-[#2d1a1e]/90 backdrop-blur-md px-6 md:px-20 py-4 flex items-center justify-between">
+
+        <!-- IZQUIERDA: logo + buscador -->
+        <div class="flex items-center gap-8">
+
+            <a href="./dashboard.html" class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-[#8d2036] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
+                    B
+                </div>
+                <div class="font-semibold text-xl text-[#8d2036] dark:text-white">BerryBot</div>
+            </a>
+
+            <div
+                class="flex items-center gap-3 bg-[#f8f6f6] dark:bg-white/5 border border-[#e4d2d6] dark:border-white/10 rounded-2xl px-4 py-2.5 w-80">
+                <span class="material-symbols-outlined text-[#8f5662] dark:text-white/40 text-xl">search</span>
+                <input id="search-input" type="text" placeholder="Buscar materias..." oninput="filterMaterias()"
+                    class="bg-transparent border-0 focus:ring-0 outline-none text-sm text-[#1f1315] dark:text-white placeholder:text-[#b59aa2] dark:placeholder:text-white/30 w-full">
+            </div>
+
+        </div>
+
+        <!-- DERECHA: nav + controles -->
+        <div class="flex items-center gap-6">
+
+            <a href="./profesores.html" class="nav-link">Profesores</a>
+            <a href="./materias.html" class="nav-link active-link">Materias</a>
+
+            <button onclick="toggleDark()" class="text-slate-400 hover:text-[#8d2036] transition-colors">
+                <span id="dark-icon" class="material-symbols-outlined">dark_mode</span>
+            </button>
+
+            <div id="hd-avatar"
+                class="w-10 h-10 rounded-full bg-[#8d2036] text-white font-bold text-sm flex items-center justify-center cursor-pointer">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-[1200px] mx-auto px-6 py-10">
+
+        <!-- TÍTULO -->
+        <div class="mb-10">
+            <h1 class="text-5xl font-black dark:text-white">Materias</h1>
+            <p class="text-[#8f5662] mt-2 dark:text-white/60">
+                Retícula completa · UES Hermosillo ·
+                <span id="total-materias" class="font-semibold text-[#8d2036]">—</span> materias
+            </p>
+        </div>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+            <div class="stats-card">
+                <h2 id="stat-materias" class="stats-number">—</h2>
+                <p class="stats-text">Materias</p>
+            </div>
+            <div class="stats-card">
+                <h2 class="stats-number">8</h2>
+                <p class="stats-text">Semestres</p>
+            </div>
+        </div>
+
+        <!-- FILTROS POR SEMESTRE -->
+        <div class="flex flex-wrap gap-3 mb-10">
+            <button class="semester-btn active" onclick="filterSem(this, 'all')">Todos</button>
+            <button class="semester-btn" onclick="filterSem(this, '1')">1er Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '2')">2do Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '3')">3er Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '4')">4to Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '5')">5to Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '6')">6to Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '7')">7mo Semestre</button>
+            <button class="semester-btn" onclick="filterSem(this, '8')">8vo Semestre</button>
+        </div>
+
+        <!-- GRID DE CARDS -->
+        <div id="materias-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Se llena desde materiasController.js -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="empty-state" class="hidden flex-col items-center justify-center py-20">
+            <span class="material-symbols-outlined text-6xl text-[#8d2036]/30 block">search_off</span>
+            <p class="mt-4 text-[#8f5662] dark:text-white/60">No se encontraron materias</p>
+        </div>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script type="module" src="./js/controllers/materiasController.js"></script>
+
+</body>
+
+</html>

@@ -1,83 +1,141 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="light">
+
 <head>
   <meta charset="UTF-8" />
   <title>BerryBot Chat</title>
-<!-- CSS -->
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="dist/output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-[Lexend] flex">
+<body class="bg-gray-100 dark:bg-[#1f1315] text-slate-900 dark:text-white font-[Lexend] flex">
 
-  <!-- SIDEBAR -->
-  <div class="w-64 min-h-screen bg-white border-r fixed left-0 top-0 flex flex-col">
+  <!-- SIDEBAR COMPLETO -->
+  <div
+    class="w-64 min-h-screen bg-white dark:bg-[#2d1a1e] border-r border-slate-200 dark:border-white/10 fixed left-0 top-0 flex flex-col">
 
-    <div class="p-6 border-b">
+    <div class="p-6 border-b border-slate-200 dark:border-white/10">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#8d2036] rounded-2xl flex items-center justify-center text-white font-bold text-2xl">
           B
         </div>
-        <div class="font-semibold text-xl text-[#8d2036]">BerryBot</div>
+        <div class="font-semibold text-xl text-[#8d2036] dark:text-white">
+          BerryBot
+        </div>
       </div>
     </div>
 
     <nav class="flex-1 p-4 space-y-1">
-      <a href="dashboard.html" class="block px-4 py-3 rounded-xl bg-[#8d2036]/10 text-[#8d2036] font-medium">
-        Inicio
+      <a href="dashboard.html"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">home</span>
+        <span>Inicio</span>
       </a>
 
-      <a href="chat.html" class="block px-4 py-3 rounded-xl hover:bg-gray-100">
-        BerryBot Chat
+      <a href="chat.html"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-[#8d2036]/10 text-[#8d2036] font-medium">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span>BerryBot Chat</span>
+      </a>
+
+      <a href="profesores.html"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">person_search</span>
+        <span>Buscar Maestro</span>
+      </a>
+
+      <a href="materias.html"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">book</span>
+        <span>Buscar Materia</span>
+      </a>
+
+      <a href="#"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">school</span>
+        <span>Mi Tutor</span>
+      </a>
+
+      <a href="#"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">assignment_turned_in</span>
+        <span>Asesorías PASA</span>
+      </a>
+
+      <a href="#"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span>Calendario</span>
+      </a>
+
+      <a href="#"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">event</span>
+        <span>Eventos</span>
+      </a>
+
+      <a href="./reviews.html"
+        class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined">rate_review</span>
+        <span>Publicar Reseña</span>
       </a>
     </nav>
 
-    <div class="p-4 border-t">
-      <button class="w-full px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl">
-        Cerrar sesión
+    <div class="p-4 border-t border-slate-200 dark:border-white/10">
+      <button onclick="logoutDirect()"
+        class="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-2xl transition-colors">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Cerrar sesión</span>
       </button>
     </div>
-
   </div>
 
   <!-- CONTENIDO -->
   <div class="ml-64 flex-1 flex flex-col">
 
     <!-- HEADER -->
-    <header class="bg-white shadow p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">BerryBot Chat</h1>
+    <header
+      class="bg-white dark:bg-[#2d1a1e] border-b border-slate-200 dark:border-white/10 px-8 py-5 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-[#8d2036] dark:text-white">
+        BerryBot Chat
+      </h1>
 
-      <a href="dashboard.html" class="hover:underline font-medium">
-        Volver al Dashboard
-      </a>
+      <div class="flex items-center gap-6">
+        <button onclick="toggleDark()" class="text-2xl">
+          <span id="dark-icon" class="material-symbols-outlined">dark_mode</span>
+        </button>
+
+        <div class="flex items-center gap-3">
+          <div id="hd-avatar"
+            class="w-9 h-9 bg-[#8d2036] text-white rounded-2xl flex items-center justify-center font-bold text-sm">
+          </div>
+          <div>
+            <div id="hd-name" class="font-semibold text-sm"></div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">Estudiante</div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- CHAT -->
     <section class="flex flex-col flex-1 max-w-2xl mx-auto w-full p-4">
 
       <!-- MENSAJES -->
-      <div 
-        id="chatbot-messages"
-        class="flex-1 overflow-y-auto bg-gray-100 rounded-xl border-t-4 border-red-800 shadow p-4 space-y-3"
-      >
+      <div id="chatbot-messages"
+        class="flex-1 overflow-y-auto bg-white dark:bg-[#2d1a1e] rounded-3xl border-t-4 border-[#8d2036] shadow p-4 space-y-3 h-[500px]">
       </div>
 
       <!-- INPUT -->
       <div class="mt-4 flex gap-2">
-        <input 
-          type="text" 
-          id="chatbot-input" 
-          placeholder="Escribe tu mensaje..." 
-          class="flex-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-900"
-        />
-
-        <button class="bg-red-800 text-white px-4 rounded-xl hover:bg-red-900 transition">
+        <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..."
+          class="flex-1 p-3 rounded-2xl border border-[#8d2036] bg-white dark:bg-[#2d1a1e] dark:text-white outline-none focus:outline-none focus:border-[#8d2036] focus:ring-0 focus:shadow-none" />
+        <button id="chatbot-send" class="bg-red-800 text-white px-4 rounded-xl hover:bg-red-900 transition">
           Enviar
         </button>
       </div>
@@ -86,21 +144,58 @@
 
   </div>
 
-  <!-- SCRIPT MENSAJE INICIAL -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const messages = document.getElementById('chatbot-messages');
-
-      const welcome = document.createElement('div');
-      welcome.className = 'bg-red-100 text-red-900 p-3 rounded-xl max-w-max';
-      welcome.textContent = 'Hola, ¿en qué puedo ayudarte?';
-
-      messages.appendChild(welcome);
-    });
-  </script>
-
   <!-- JS -->
-  <script src="js/chatbot.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/controllers/chatbotController.js"></script>
 
+  <script>
+    // Función para cerrar sesión (similar a la del dashboard)
+    async function logoutDirect() {
+      const btn = event?.target?.closest('button');
+      const originalContent = btn?.innerHTML;
+
+      if (btn) {
+        btn.innerHTML = `
+          <div class="flex items-center justify-center gap-2 w-full">
+            <div class="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
+            <span>Cerrando sesión...</span>
+          </div>
+        `;
+        btn.disabled = true;
+        btn.style.opacity = '0.8';
+      }
+
+      try {
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+        const supabase = createClient(
+          'https://otibvoqmgsybpfaqiyun.supabase.co',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90aWJ2b3FtZ3N5YnBmYXFpeXVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMzI4NDcsImV4cCI6MjA5MTcwODg0N30.KQpiRCulIi6c5p021OqqOPS8oyr_-mSfhM70qAwcz9I'
+        );
+        await supabase.auth.signOut();
+        localStorage.removeItem('supabase.auth.token');
+        sessionStorage.clear();
+        window.location.replace('login.html');
+      } catch (error) {
+        console.error('Logout error:', error);
+        window.location.href = 'login.html';
+      }
+    }
+
+    // Función para alternar tema oscuro
+    function toggleDark() {
+      const html = document.documentElement;
+      const icon = document.getElementById('dark-icon');
+      if (html.classList.contains('light')) {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        icon.textContent = 'light_mode';
+      } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        icon.textContent = 'dark_mode';
+      }
+    }
+  </script>
 </body>
+
 </html>
